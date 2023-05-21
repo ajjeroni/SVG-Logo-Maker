@@ -8,7 +8,7 @@
     "lib": "lib"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -21,8 +21,9 @@
   },
   "homepage": "https://github.com/ajjeroni/SVG-Logo-Maker#readme",
   "dependencies": {
-    "inquirer": "^8.2.4"
+    "inquirer": "8.2.4"
   },
-  "devDependencies": {},
-  "keywords": []
+  "devDependencies": {
+    "jest": "29.5.0"
+  }
 }
