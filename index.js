@@ -1,6 +1,6 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
-const {Triangle, Square, Circle} = require("./lib/shapes");
+const {Triangle, Square, Circle, Shape} = require("./lib/shapes");
 
 function writeToFile(fileName, answers) {
     let svgString = "";
@@ -11,12 +11,13 @@ function writeToFile(fileName, answers) {
     let shapeChoice; 
     if (answers.shape === "Triangle") {
         shapechoice = new Triangle();
-        svgString += `<polygon points="150, 18 244, 182 56, 182" fill="${answers.shapeBackgroundColor}"/>`;
+        shapeChoice.setColor("black");
+        svgString += shapeChoice.render();
     } else if (answers.shape === "Square") {
-      shapeChoice = new Square();
+      // shapeChoice = new Square();
       svgString += `<rect x="73" y="40" width="160" height="160" fill="${answers.shapeBackgroundColor}"/>`;
     } else {
-      shapeChoice = new Circle();
+      // shapeChoice = new Circle();
       svgString += `<circle cx="150" cy="115" r="80" fill="${answers.shapeBackgroundColor}"/>`;
     }
     svgString += `<text x="150" y="130" text-anchor="middle" font-size="40" fill="${answers.textColor}">${answers.text}</text>`;
